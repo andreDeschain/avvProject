@@ -3159,17 +3159,25 @@
 			}
 
 /* Banner */
-
-	#banner {
-    background-attachment: scroll, fixed;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("images/banner.jpeg");
-    background-position: top left, center center;
-    background-repeat: repeat, no-repeat;
-    background-size: auto, cover;
-    padding: 12em 0 20em 0;
+#banner {
+    position: relative;
     text-align: center;
     color: #fff;
+    padding: 12em 0 20em 0;
 }
+
+#banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("images/overlay.png") center center / cover no-repeat;
+    opacity: 0.7; /* Imposta la trasparenza */
+    z-index: -1; /* Assicura che l'immagine sia sotto il contenuto */
+}
+
 
 
 		#banner :last-child {
